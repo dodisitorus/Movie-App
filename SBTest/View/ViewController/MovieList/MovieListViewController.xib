@@ -1,0 +1,777 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MovieListViewController" customModule="SBTest" customModuleProvider="target">
+            <connections>
+                <outlet property="shimmerLoadingView" destination="Ffr-k4-ddE" id="EwZ-qs-0Y5"/>
+                <outlet property="tableView" destination="suN-tA-SCl" id="lur-3f-uX2"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ffr-k4-ddE" userLabel="Shimmer Loading View">
+                    <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="axw-Q2-3w6" userLabel="Item Shimmer">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="143.5"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DxQ-6r-00W" customClass="ShimmerImageView" customModule="SBTest" customModuleProvider="target">
+                                    <rect key="frame" x="16" y="16" width="64" height="64"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="64" id="aGb-ug-gCP"/>
+                                        <constraint firstAttribute="height" constant="64" id="ayF-a5-nhW"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tempor augue feugiat dolor sagittis sagittis ut non metus." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C89-UH-zOM" customClass="ShimmerLabel" customModule="SBTest" customModuleProvider="target">
+                                    <rect key="frame" x="16" y="85" width="382" height="50.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title Movie Lorem Insum" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cOz-j6-mJE" customClass="ShimmerLabel" customModule="SBTest" customModuleProvider="target">
+                                    <rect key="frame" x="88" y="16" width="310" height="18"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="whb-K3-NRD">
+                                    <rect key="frame" x="88" y="39" width="104" height="20"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star Fill" translatesAutoresizingMaskIntoConstraints="NO" id="B0a-J1-3Vi" customClass="ShimmerImageView" customModule="SBTest" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="20" id="jaa-dY-QLR"/>
+                                                <constraint firstAttribute="height" constant="20" id="pEp-Nx-BcA"/>
+                                            </constraints>
+                                        </imageView>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star Fill" translatesAutoresizingMaskIntoConstraints="NO" id="1qH-as-u2y" customClass="ShimmerImageView" customModule="SBTest" customModuleProvider="target">
+                                            <rect key="frame" x="21" y="0.0" width="20" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="20" id="Hth-Q1-Cak"/>
+                                                <constraint firstAttribute="height" constant="20" id="PPQ-wD-2Ah"/>
+                                            </constraints>
+                                        </imageView>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star Fill" translatesAutoresizingMaskIntoConstraints="NO" id="ZsA-Up-Wan" customClass="ShimmerImageView" customModule="SBTest" customModuleProvider="target">
+                                            <rect key="frame" x="42" y="0.0" width="20" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="691-tc-L8i"/>
+                                                <constraint firstAttribute="width" constant="20" id="8pI-gl-RQF"/>
+                                            </constraints>
+                                        </imageView>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star Fill" translatesAutoresizingMaskIntoConstraints="NO" id="XTa-jR-I7l" customClass="ShimmerImageView" customModule="SBTest" customModuleProvider="target">
+                                            <rect key="frame" x="63" y="0.0" width="20" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="3sk-4V-YOk"/>
+                                                <constraint firstAttribute="width" constant="20" id="oNY-EU-GMj"/>
+                                            </constraints>
+                                        </imageView>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star Empty" translatesAutoresizingMaskIntoConstraints="NO" id="tWM-5P-nHr" customClass="ShimmerImageView" customModule="SBTest" customModuleProvider="target">
+                                            <rect key="frame" x="84" y="0.0" width="20" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="20" id="IEC-PS-jrQ"/>
+                                                <constraint firstAttribute="height" constant="20" id="id2-j5-B6U"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                </stackView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hqX-Sw-JEC" customClass="ShimmerLabel" customModule="SBTest" customModuleProvider="target">
+                                    <rect key="frame" x="197" y="39" width="26.5" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                    <color key="textColor" red="0.0" green="0.36690649390000002" blue="0.87177920340000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01 January 2021" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hTF-5Q-U2g" userLabel="Date" customClass="ShimmerLabel" customModule="SBTest" customModuleProvider="target">
+                                    <rect key="frame" x="88" y="64.5" width="92.5" height="14.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="cOz-j6-mJE" firstAttribute="top" secondItem="DxQ-6r-00W" secondAttribute="top" id="2DU-rc-fOK"/>
+                                <constraint firstAttribute="bottom" secondItem="C89-UH-zOM" secondAttribute="bottom" constant="8" id="FUZ-VS-Lg7"/>
+                                <constraint firstAttribute="trailing" secondItem="cOz-j6-mJE" secondAttribute="trailing" constant="16" id="G4R-5v-sfC"/>
+                                <constraint firstItem="whb-K3-NRD" firstAttribute="leading" secondItem="cOz-j6-mJE" secondAttribute="leading" id="HvA-YH-Fdt"/>
+                                <constraint firstItem="hTF-5Q-U2g" firstAttribute="top" secondItem="hqX-Sw-JEC" secondAttribute="bottom" constant="5" id="JoD-z3-WDN"/>
+                                <constraint firstItem="cOz-j6-mJE" firstAttribute="leading" secondItem="DxQ-6r-00W" secondAttribute="trailing" constant="8" id="NNE-xq-q19"/>
+                                <constraint firstItem="whb-K3-NRD" firstAttribute="top" secondItem="cOz-j6-mJE" secondAttribute="bottom" constant="5" id="OH2-5i-ZGD"/>
+                                <constraint firstItem="DxQ-6r-00W" firstAttribute="top" secondItem="axw-Q2-3w6" secondAttribute="top" constant="16" id="aet-0T-lKz"/>
+                                <constraint firstAttribute="trailing" secondItem="C89-UH-zOM" secondAttribute="trailing" constant="16" id="foT-fw-ICE"/>
+                                <constraint firstItem="hTF-5Q-U2g" firstAttribute="leading" secondItem="cOz-j6-mJE" secondAttribute="leading" id="iHX-TT-j86"/>
+                                <constraint firstItem="C89-UH-zOM" firstAttribute="top" secondItem="DxQ-6r-00W" secondAttribute="bottom" constant="5" id="kgP-SQ-83j"/>
+                                <constraint firstItem="C89-UH-zOM" firstAttribute="leading" secondItem="DxQ-6r-00W" secondAttribute="leading" id="lNQ-IU-WI3"/>
+                                <constraint firstItem="hqX-Sw-JEC" firstAttribute="leading" secondItem="whb-K3-NRD" secondAttribute="trailing" constant="5" id="mA3-rH-JbY"/>
+                                <constraint firstItem="DxQ-6r-00W" firstAttribute="leading" secondItem="axw-Q2-3w6" secondAttribute="leading" constant="16" id="mHf-qv-p1o"/>
+                                <constraint firstItem="hqX-Sw-JEC" firstAttribute="centerY" secondItem="whb-K3-NRD" secondAttribute="centerY" id="vst-Gp-uKf"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="frx-8K-Bv8" userLabel="Item Shimmer">
+                            <rect key="frame" x="0.0" y="143.5" width="414" height="143.5"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zZ6-xa-zS0" customClass="ShimmerImageView" customModule="SBTest" customModuleProvider="target">
+                                    <rect key="frame" x="16" y="16" width="64" height="64"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="64" id="2Za-3Z-Obn"/>
+                                        <constraint firstAttribute="width" constant="64" id="SHQ-n4-nzw"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tempor augue feugiat dolor sagittis sagittis ut non metus." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZES-Te-R5z" customClass="ShimmerLabel" customModule="SBTest" customModuleProvider="target">
+                                    <rect key="frame" x="16" y="85" width="382" height="50.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title Movie Lorem Insum" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FHv-Hv-c7I" customClass="ShimmerLabel" customModule="SBTest" customModuleProvider="target">
+                                    <rect key="frame" x="88" y="16" width="310" height="18"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="2if-nT-lTc">
+                                    <rect key="frame" x="88" y="39" width="104" height="20"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star Fill" translatesAutoresizingMaskIntoConstraints="NO" id="fpB-TU-KET" customClass="ShimmerImageView" customModule="SBTest" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="20" id="pz7-qS-LBl"/>
+                                                <constraint firstAttribute="height" constant="20" id="vWU-no-gtf"/>
+                                            </constraints>
+                                        </imageView>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star Fill" translatesAutoresizingMaskIntoConstraints="NO" id="wra-sB-DqN" customClass="ShimmerImageView" customModule="SBTest" customModuleProvider="target">
+                                            <rect key="frame" x="21" y="0.0" width="20" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="20" id="25X-KB-tRJ"/>
+                                                <constraint firstAttribute="height" constant="20" id="rQP-ek-6vo"/>
+                                            </constraints>
+                                        </imageView>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star Fill" translatesAutoresizingMaskIntoConstraints="NO" id="H7z-MS-WRA" customClass="ShimmerImageView" customModule="SBTest" customModuleProvider="target">
+                                            <rect key="frame" x="42" y="0.0" width="20" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="20" id="Zz4-Ab-S4W"/>
+                                                <constraint firstAttribute="height" constant="20" id="ikk-Lc-BOb"/>
+                                            </constraints>
+                                        </imageView>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star Fill" translatesAutoresizingMaskIntoConstraints="NO" id="1Yp-8F-Jbn" customClass="ShimmerImageView" customModule="SBTest" customModuleProvider="target">
+                                            <rect key="frame" x="63" y="0.0" width="20" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="jpi-tb-Hxg"/>
+                                                <constraint firstAttribute="width" constant="20" id="nGO-c7-jkT"/>
+                                            </constraints>
+                                        </imageView>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star Empty" translatesAutoresizingMaskIntoConstraints="NO" id="LDp-mb-KEB" customClass="ShimmerImageView" customModule="SBTest" customModuleProvider="target">
+                                            <rect key="frame" x="84" y="0.0" width="20" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="Cio-TQ-v0D"/>
+                                                <constraint firstAttribute="width" constant="20" id="gjC-wg-vCl"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                </stackView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="szp-Hw-98H" customClass="ShimmerLabel" customModule="SBTest" customModuleProvider="target">
+                                    <rect key="frame" x="197" y="39" width="26.5" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                    <color key="textColor" red="0.0" green="0.36690649390000002" blue="0.87177920340000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01 January 2021" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WHL-iS-bdF" userLabel="Date" customClass="ShimmerLabel" customModule="SBTest" customModuleProvider="target">
+                                    <rect key="frame" x="88" y="64.5" width="92.5" height="14.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="zZ6-xa-zS0" firstAttribute="leading" secondItem="frx-8K-Bv8" secondAttribute="leading" constant="16" id="1xa-ql-9ex"/>
+                                <constraint firstItem="2if-nT-lTc" firstAttribute="top" secondItem="FHv-Hv-c7I" secondAttribute="bottom" constant="5" id="3px-hX-XsL"/>
+                                <constraint firstAttribute="trailing" secondItem="FHv-Hv-c7I" secondAttribute="trailing" constant="16" id="BM1-Cu-KtP"/>
+                                <constraint firstItem="ZES-Te-R5z" firstAttribute="top" secondItem="zZ6-xa-zS0" secondAttribute="bottom" constant="5" id="LTK-RZ-t8m"/>
+                                <constraint firstItem="2if-nT-lTc" firstAttribute="leading" secondItem="FHv-Hv-c7I" secondAttribute="leading" id="OaG-00-sTg"/>
+                                <constraint firstItem="szp-Hw-98H" firstAttribute="leading" secondItem="2if-nT-lTc" secondAttribute="trailing" constant="5" id="Ug4-XV-As1"/>
+                                <constraint firstItem="WHL-iS-bdF" firstAttribute="top" secondItem="szp-Hw-98H" secondAttribute="bottom" constant="5" id="XoK-TQ-40g"/>
+                                <constraint firstItem="ZES-Te-R5z" firstAttribute="leading" secondItem="zZ6-xa-zS0" secondAttribute="leading" id="cPi-gE-CAd"/>
+                                <constraint firstAttribute="bottom" secondItem="ZES-Te-R5z" secondAttribute="bottom" constant="8" id="cjo-VS-e48"/>
+                                <constraint firstItem="FHv-Hv-c7I" firstAttribute="top" secondItem="zZ6-xa-zS0" secondAttribute="top" id="il2-fh-PBA"/>
+                                <constraint firstItem="zZ6-xa-zS0" firstAttribute="top" secondItem="frx-8K-Bv8" secondAttribute="top" constant="16" id="iob-6X-psI"/>
+                                <constraint firstItem="FHv-Hv-c7I" firstAttribute="leading" secondItem="zZ6-xa-zS0" secondAttribute="trailing" constant="8" id="mNO-JJ-8Ew"/>
+                                <constraint firstItem="szp-Hw-98H" firstAttribute="centerY" secondItem="2if-nT-lTc" secondAttribute="centerY" id="sfe-gA-7h1"/>
+                                <constraint firstItem="WHL-iS-bdF" firstAttribute="leading" secondItem="FHv-Hv-c7I" secondAttribute="leading" id="ugW-bY-0F3"/>
+                                <constraint firstAttribute="trailing" secondItem="ZES-Te-R5z" secondAttribute="trailing" constant="16" id="yaV-HV-8Jh"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="39M-97-sxc" userLabel="Item Shimmer">
+                            <rect key="frame" x="0.0" y="287" width="414" height="143.5"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="U62-td-jW4" customClass="ShimmerImageView" customModule="SBTest" customModuleProvider="target">
+                                    <rect key="frame" x="16" y="16" width="64" height="64"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="64" id="EVs-Vu-1oR"/>
+                                        <constraint firstAttribute="height" constant="64" id="gU1-uH-1Ml"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tempor augue feugiat dolor sagittis sagittis ut non metus." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uHO-ki-Mbv" customClass="ShimmerLabel" customModule="SBTest" customModuleProvider="target">
+                                    <rect key="frame" x="16" y="85" width="382" height="50.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title Movie Lorem Insum" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="opR-El-60f" customClass="ShimmerLabel" customModule="SBTest" customModuleProvider="target">
+                                    <rect key="frame" x="88" y="16" width="310" height="18"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="EL4-hh-sXa">
+                                    <rect key="frame" x="88" y="39" width="104" height="20"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star Fill" translatesAutoresizingMaskIntoConstraints="NO" id="9HD-Dt-zvL" customClass="ShimmerImageView" customModule="SBTest" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="Yh5-UU-D3g"/>
+                                                <constraint firstAttribute="width" constant="20" id="hPh-C0-6dj"/>
+                                            </constraints>
+                                        </imageView>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star Fill" translatesAutoresizingMaskIntoConstraints="NO" id="shm-rW-Pgh" customClass="ShimmerImageView" customModule="SBTest" customModuleProvider="target">
+                                            <rect key="frame" x="21" y="0.0" width="20" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="20" id="ZB2-Ga-x9A"/>
+                                                <constraint firstAttribute="height" constant="20" id="nZG-Md-a6W"/>
+                                            </constraints>
+                                        </imageView>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star Fill" translatesAutoresizingMaskIntoConstraints="NO" id="nMf-4b-fNg" customClass="ShimmerImageView" customModule="SBTest" customModuleProvider="target">
+                                            <rect key="frame" x="42" y="0.0" width="20" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="20" id="LIA-IF-sBd"/>
+                                                <constraint firstAttribute="height" constant="20" id="yCk-yQ-J1w"/>
+                                            </constraints>
+                                        </imageView>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star Fill" translatesAutoresizingMaskIntoConstraints="NO" id="DA5-kN-ERd" customClass="ShimmerImageView" customModule="SBTest" customModuleProvider="target">
+                                            <rect key="frame" x="63" y="0.0" width="20" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="FhY-0A-fS7"/>
+                                                <constraint firstAttribute="width" constant="20" id="JWe-wU-3Ba"/>
+                                            </constraints>
+                                        </imageView>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star Empty" translatesAutoresizingMaskIntoConstraints="NO" id="WMW-3B-rhv" customClass="ShimmerImageView" customModule="SBTest" customModuleProvider="target">
+                                            <rect key="frame" x="84" y="0.0" width="20" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="FjC-1N-0aX"/>
+                                                <constraint firstAttribute="width" constant="20" id="UZr-uT-YvH"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                </stackView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iA4-xx-fRP" customClass="ShimmerLabel" customModule="SBTest" customModuleProvider="target">
+                                    <rect key="frame" x="197" y="39" width="26.5" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                    <color key="textColor" red="0.0" green="0.36690649390000002" blue="0.87177920340000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01 January 2021" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XQn-dk-Vbl" userLabel="Date" customClass="ShimmerLabel" customModule="SBTest" customModuleProvider="target">
+                                    <rect key="frame" x="88" y="64.5" width="92.5" height="14.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="XQn-dk-Vbl" firstAttribute="top" secondItem="iA4-xx-fRP" secondAttribute="bottom" constant="5" id="3Lt-OT-UVB"/>
+                                <constraint firstItem="EL4-hh-sXa" firstAttribute="top" secondItem="opR-El-60f" secondAttribute="bottom" constant="5" id="3P1-T6-n9f"/>
+                                <constraint firstAttribute="trailing" secondItem="opR-El-60f" secondAttribute="trailing" constant="16" id="94N-oX-gj5"/>
+                                <constraint firstItem="iA4-xx-fRP" firstAttribute="leading" secondItem="EL4-hh-sXa" secondAttribute="trailing" constant="5" id="9bF-7Y-Ho5"/>
+                                <constraint firstItem="opR-El-60f" firstAttribute="top" secondItem="U62-td-jW4" secondAttribute="top" id="LGa-IN-VDr"/>
+                                <constraint firstItem="U62-td-jW4" firstAttribute="leading" secondItem="39M-97-sxc" secondAttribute="leading" constant="16" id="LKe-MF-wg3"/>
+                                <constraint firstAttribute="bottom" secondItem="uHO-ki-Mbv" secondAttribute="bottom" constant="8" id="R2j-A2-vHc"/>
+                                <constraint firstItem="opR-El-60f" firstAttribute="leading" secondItem="U62-td-jW4" secondAttribute="trailing" constant="8" id="VmZ-hF-lbF"/>
+                                <constraint firstItem="iA4-xx-fRP" firstAttribute="centerY" secondItem="EL4-hh-sXa" secondAttribute="centerY" id="e2z-U5-Cot"/>
+                                <constraint firstAttribute="trailing" secondItem="uHO-ki-Mbv" secondAttribute="trailing" constant="16" id="eqq-WK-U1s"/>
+                                <constraint firstItem="XQn-dk-Vbl" firstAttribute="leading" secondItem="opR-El-60f" secondAttribute="leading" id="ewM-sQ-fYh"/>
+                                <constraint firstItem="U62-td-jW4" firstAttribute="top" secondItem="39M-97-sxc" secondAttribute="top" constant="16" id="kOR-0w-gnQ"/>
+                                <constraint firstItem="EL4-hh-sXa" firstAttribute="leading" secondItem="opR-El-60f" secondAttribute="leading" id="puc-7U-s9g"/>
+                                <constraint firstItem="uHO-ki-Mbv" firstAttribute="leading" secondItem="U62-td-jW4" secondAttribute="leading" id="uye-o0-yn5"/>
+                                <constraint firstItem="uHO-ki-Mbv" firstAttribute="top" secondItem="U62-td-jW4" secondAttribute="bottom" constant="5" id="z9T-VI-nke"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V56-tH-vyI" userLabel="Item Shimmer">
+                            <rect key="frame" x="0.0" y="430.5" width="414" height="143.5"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PbB-cL-J96" customClass="ShimmerImageView" customModule="SBTest" customModuleProvider="target">
+                                    <rect key="frame" x="16" y="16" width="64" height="64"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="64" id="3ZF-tU-O5I"/>
+                                        <constraint firstAttribute="width" constant="64" id="uEL-DW-ykQ"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tempor augue feugiat dolor sagittis sagittis ut non metus." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hLP-an-OFl" customClass="ShimmerLabel" customModule="SBTest" customModuleProvider="target">
+                                    <rect key="frame" x="16" y="85" width="382" height="50.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title Movie Lorem Insum" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a5s-UO-Rb9" customClass="ShimmerLabel" customModule="SBTest" customModuleProvider="target">
+                                    <rect key="frame" x="88" y="16" width="310" height="18"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="DSc-OL-NfZ">
+                                    <rect key="frame" x="88" y="39" width="104" height="20"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star Fill" translatesAutoresizingMaskIntoConstraints="NO" id="37Y-hG-3b7" customClass="ShimmerImageView" customModule="SBTest" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="5U1-ti-9bz"/>
+                                                <constraint firstAttribute="width" constant="20" id="H6l-Lt-LT2"/>
+                                            </constraints>
+                                        </imageView>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star Fill" translatesAutoresizingMaskIntoConstraints="NO" id="xQe-gE-Edz" customClass="ShimmerImageView" customModule="SBTest" customModuleProvider="target">
+                                            <rect key="frame" x="21" y="0.0" width="20" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="Lrd-u9-TkO"/>
+                                                <constraint firstAttribute="width" constant="20" id="bKT-MN-eBB"/>
+                                            </constraints>
+                                        </imageView>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star Fill" translatesAutoresizingMaskIntoConstraints="NO" id="SMf-J2-9u6" customClass="ShimmerImageView" customModule="SBTest" customModuleProvider="target">
+                                            <rect key="frame" x="42" y="0.0" width="20" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="GpR-2C-I5a"/>
+                                                <constraint firstAttribute="width" constant="20" id="hav-UO-mNG"/>
+                                            </constraints>
+                                        </imageView>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star Fill" translatesAutoresizingMaskIntoConstraints="NO" id="fXq-11-xQh" customClass="ShimmerImageView" customModule="SBTest" customModuleProvider="target">
+                                            <rect key="frame" x="63" y="0.0" width="20" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="fgw-k9-gOE"/>
+                                                <constraint firstAttribute="width" constant="20" id="hfA-FW-Gjo"/>
+                                            </constraints>
+                                        </imageView>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star Empty" translatesAutoresizingMaskIntoConstraints="NO" id="8cl-hs-Zrc" customClass="ShimmerImageView" customModule="SBTest" customModuleProvider="target">
+                                            <rect key="frame" x="84" y="0.0" width="20" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="20" id="bCd-ja-jsy"/>
+                                                <constraint firstAttribute="height" constant="20" id="z2x-y2-ZnJ"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                </stackView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dag-ht-3XF" customClass="ShimmerLabel" customModule="SBTest" customModuleProvider="target">
+                                    <rect key="frame" x="197" y="39" width="26.5" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                    <color key="textColor" red="0.0" green="0.36690649390000002" blue="0.87177920340000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01 January 2021" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0hO-HU-ari" userLabel="Date" customClass="ShimmerLabel" customModule="SBTest" customModuleProvider="target">
+                                    <rect key="frame" x="88" y="64.5" width="92.5" height="14.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="a5s-UO-Rb9" firstAttribute="leading" secondItem="PbB-cL-J96" secondAttribute="trailing" constant="8" id="0Zf-N6-DbI"/>
+                                <constraint firstItem="0hO-HU-ari" firstAttribute="top" secondItem="Dag-ht-3XF" secondAttribute="bottom" constant="5" id="8xB-nK-yhr"/>
+                                <constraint firstItem="Dag-ht-3XF" firstAttribute="centerY" secondItem="DSc-OL-NfZ" secondAttribute="centerY" id="D8e-tP-hk9"/>
+                                <constraint firstAttribute="bottom" secondItem="hLP-an-OFl" secondAttribute="bottom" constant="8" id="Hoo-xl-WXz"/>
+                                <constraint firstItem="0hO-HU-ari" firstAttribute="leading" secondItem="a5s-UO-Rb9" secondAttribute="leading" id="IHn-cl-hTT"/>
+                                <constraint firstItem="PbB-cL-J96" firstAttribute="leading" secondItem="V56-tH-vyI" secondAttribute="leading" constant="16" id="NbQ-NW-uiY"/>
+                                <constraint firstAttribute="trailing" secondItem="hLP-an-OFl" secondAttribute="trailing" constant="16" id="dFs-zv-lcp"/>
+                                <constraint firstItem="hLP-an-OFl" firstAttribute="leading" secondItem="PbB-cL-J96" secondAttribute="leading" id="e1U-SE-YI1"/>
+                                <constraint firstItem="a5s-UO-Rb9" firstAttribute="top" secondItem="PbB-cL-J96" secondAttribute="top" id="esl-ZO-EP7"/>
+                                <constraint firstItem="DSc-OL-NfZ" firstAttribute="top" secondItem="a5s-UO-Rb9" secondAttribute="bottom" constant="5" id="fD8-AX-QLl"/>
+                                <constraint firstItem="DSc-OL-NfZ" firstAttribute="leading" secondItem="a5s-UO-Rb9" secondAttribute="leading" id="fbZ-iX-smK"/>
+                                <constraint firstItem="hLP-an-OFl" firstAttribute="top" secondItem="PbB-cL-J96" secondAttribute="bottom" constant="5" id="jCR-mb-JtX"/>
+                                <constraint firstAttribute="trailing" secondItem="a5s-UO-Rb9" secondAttribute="trailing" constant="16" id="y4m-b9-9lJ"/>
+                                <constraint firstItem="Dag-ht-3XF" firstAttribute="leading" secondItem="DSc-OL-NfZ" secondAttribute="trailing" constant="5" id="yqu-Rs-V6u"/>
+                                <constraint firstItem="PbB-cL-J96" firstAttribute="top" secondItem="V56-tH-vyI" secondAttribute="top" constant="16" id="z6h-Sw-tCX"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pll-gf-8A2" userLabel="Item Shimmer">
+                            <rect key="frame" x="0.0" y="574" width="414" height="143.5"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fF5-Jl-7NV" customClass="ShimmerImageView" customModule="SBTest" customModuleProvider="target">
+                                    <rect key="frame" x="16" y="16" width="64" height="64"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="64" id="4c6-DM-P9f"/>
+                                        <constraint firstAttribute="height" constant="64" id="ZTX-I6-lNX"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tempor augue feugiat dolor sagittis sagittis ut non metus." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UvL-Yf-DUN" customClass="ShimmerLabel" customModule="SBTest" customModuleProvider="target">
+                                    <rect key="frame" x="16" y="85" width="382" height="50.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title Movie Lorem Insum" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ISg-cH-zxJ" customClass="ShimmerLabel" customModule="SBTest" customModuleProvider="target">
+                                    <rect key="frame" x="88" y="16" width="310" height="18"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="kod-cK-KtW">
+                                    <rect key="frame" x="88" y="39" width="104" height="20"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star Fill" translatesAutoresizingMaskIntoConstraints="NO" id="NH1-Xm-0D1" customClass="ShimmerImageView" customModule="SBTest" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="20" id="Czv-q9-JAY"/>
+                                                <constraint firstAttribute="height" constant="20" id="hnq-DN-tGK"/>
+                                            </constraints>
+                                        </imageView>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star Fill" translatesAutoresizingMaskIntoConstraints="NO" id="B8T-5y-AGf" customClass="ShimmerImageView" customModule="SBTest" customModuleProvider="target">
+                                            <rect key="frame" x="21" y="0.0" width="20" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="20" id="Jeh-oK-EId"/>
+                                                <constraint firstAttribute="height" constant="20" id="e8D-3P-kcw"/>
+                                            </constraints>
+                                        </imageView>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star Fill" translatesAutoresizingMaskIntoConstraints="NO" id="8li-rc-nh5" customClass="ShimmerImageView" customModule="SBTest" customModuleProvider="target">
+                                            <rect key="frame" x="42" y="0.0" width="20" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="SeD-xa-u4y"/>
+                                                <constraint firstAttribute="width" constant="20" id="wds-38-FTu"/>
+                                            </constraints>
+                                        </imageView>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star Fill" translatesAutoresizingMaskIntoConstraints="NO" id="Sgf-aM-F9J" customClass="ShimmerImageView" customModule="SBTest" customModuleProvider="target">
+                                            <rect key="frame" x="63" y="0.0" width="20" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="20" id="02h-yT-aK8"/>
+                                                <constraint firstAttribute="height" constant="20" id="V6V-p3-HEs"/>
+                                            </constraints>
+                                        </imageView>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star Empty" translatesAutoresizingMaskIntoConstraints="NO" id="ixN-6h-Llp" customClass="ShimmerImageView" customModule="SBTest" customModuleProvider="target">
+                                            <rect key="frame" x="84" y="0.0" width="20" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="IHo-GP-xBA"/>
+                                                <constraint firstAttribute="width" constant="20" id="di8-aW-tHs"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                </stackView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Qm-z3-sIf" customClass="ShimmerLabel" customModule="SBTest" customModuleProvider="target">
+                                    <rect key="frame" x="197" y="39" width="26.5" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                    <color key="textColor" red="0.0" green="0.36690649390000002" blue="0.87177920340000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01 January 2021" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qKL-La-Tzo" userLabel="Date" customClass="ShimmerLabel" customModule="SBTest" customModuleProvider="target">
+                                    <rect key="frame" x="88" y="64.5" width="92.5" height="14.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="2Qm-z3-sIf" firstAttribute="leading" secondItem="kod-cK-KtW" secondAttribute="trailing" constant="5" id="09g-BP-6YP"/>
+                                <constraint firstItem="UvL-Yf-DUN" firstAttribute="top" secondItem="fF5-Jl-7NV" secondAttribute="bottom" constant="5" id="1RX-Z1-7ot"/>
+                                <constraint firstItem="kod-cK-KtW" firstAttribute="leading" secondItem="ISg-cH-zxJ" secondAttribute="leading" id="2Pr-XP-I9e"/>
+                                <constraint firstItem="fF5-Jl-7NV" firstAttribute="leading" secondItem="pll-gf-8A2" secondAttribute="leading" constant="16" id="5l0-ef-dBp"/>
+                                <constraint firstAttribute="bottom" secondItem="UvL-Yf-DUN" secondAttribute="bottom" constant="8" id="7Qs-Fp-UnY"/>
+                                <constraint firstItem="UvL-Yf-DUN" firstAttribute="leading" secondItem="fF5-Jl-7NV" secondAttribute="leading" id="Dxh-zl-Cnw"/>
+                                <constraint firstItem="ISg-cH-zxJ" firstAttribute="top" secondItem="fF5-Jl-7NV" secondAttribute="top" id="Iem-fq-ve7"/>
+                                <constraint firstItem="fF5-Jl-7NV" firstAttribute="top" secondItem="pll-gf-8A2" secondAttribute="top" constant="16" id="Iyp-VE-VkP"/>
+                                <constraint firstItem="qKL-La-Tzo" firstAttribute="top" secondItem="2Qm-z3-sIf" secondAttribute="bottom" constant="5" id="O0o-tb-c9K"/>
+                                <constraint firstAttribute="trailing" secondItem="UvL-Yf-DUN" secondAttribute="trailing" constant="16" id="ag2-xa-kEy"/>
+                                <constraint firstItem="ISg-cH-zxJ" firstAttribute="leading" secondItem="fF5-Jl-7NV" secondAttribute="trailing" constant="8" id="dxN-78-DqU"/>
+                                <constraint firstAttribute="trailing" secondItem="ISg-cH-zxJ" secondAttribute="trailing" constant="16" id="eSm-Us-h2y"/>
+                                <constraint firstItem="qKL-La-Tzo" firstAttribute="leading" secondItem="ISg-cH-zxJ" secondAttribute="leading" id="eef-BB-O1J"/>
+                                <constraint firstItem="2Qm-z3-sIf" firstAttribute="centerY" secondItem="kod-cK-KtW" secondAttribute="centerY" id="mzc-cl-848"/>
+                                <constraint firstItem="kod-cK-KtW" firstAttribute="top" secondItem="ISg-cH-zxJ" secondAttribute="bottom" constant="5" id="sQb-xg-dsE"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8nf-u3-VMu" userLabel="Item Shimmer">
+                            <rect key="frame" x="0.0" y="717.5" width="414" height="143.5"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="P5l-Qi-mi3" customClass="ShimmerImageView" customModule="SBTest" customModuleProvider="target">
+                                    <rect key="frame" x="16" y="16" width="64" height="64"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="64" id="4uP-JI-pG9"/>
+                                        <constraint firstAttribute="width" constant="64" id="TXM-op-UNj"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tempor augue feugiat dolor sagittis sagittis ut non metus." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f2T-3h-WCJ" customClass="ShimmerLabel" customModule="SBTest" customModuleProvider="target">
+                                    <rect key="frame" x="16" y="85" width="382" height="50.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title Movie Lorem Insum" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZeF-Gg-J6Z" customClass="ShimmerLabel" customModule="SBTest" customModuleProvider="target">
+                                    <rect key="frame" x="88" y="16" width="310" height="18"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="vs3-l9-k8w">
+                                    <rect key="frame" x="88" y="39" width="104" height="20"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star Fill" translatesAutoresizingMaskIntoConstraints="NO" id="P1N-Ix-oQ7" customClass="ShimmerImageView" customModule="SBTest" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="Bji-68-MZw"/>
+                                                <constraint firstAttribute="width" constant="20" id="eRv-UR-02x"/>
+                                            </constraints>
+                                        </imageView>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star Fill" translatesAutoresizingMaskIntoConstraints="NO" id="FxC-G3-0Sl" customClass="ShimmerImageView" customModule="SBTest" customModuleProvider="target">
+                                            <rect key="frame" x="21" y="0.0" width="20" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="2p0-lX-Hbh"/>
+                                                <constraint firstAttribute="width" constant="20" id="hRm-sK-2c6"/>
+                                            </constraints>
+                                        </imageView>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star Fill" translatesAutoresizingMaskIntoConstraints="NO" id="lgS-n7-Rkh" customClass="ShimmerImageView" customModule="SBTest" customModuleProvider="target">
+                                            <rect key="frame" x="42" y="0.0" width="20" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="5R0-Wi-4Bk"/>
+                                                <constraint firstAttribute="width" constant="20" id="fQB-8T-y85"/>
+                                            </constraints>
+                                        </imageView>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star Fill" translatesAutoresizingMaskIntoConstraints="NO" id="N6x-au-5Ac" customClass="ShimmerImageView" customModule="SBTest" customModuleProvider="target">
+                                            <rect key="frame" x="63" y="0.0" width="20" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="20" id="Y3U-gT-4rm"/>
+                                                <constraint firstAttribute="height" constant="20" id="jNs-m5-SsV"/>
+                                            </constraints>
+                                        </imageView>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star Empty" translatesAutoresizingMaskIntoConstraints="NO" id="a40-0e-zWY" customClass="ShimmerImageView" customModule="SBTest" customModuleProvider="target">
+                                            <rect key="frame" x="84" y="0.0" width="20" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="20" id="SYE-fu-F7P"/>
+                                                <constraint firstAttribute="height" constant="20" id="zFB-Rz-xQI"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                </stackView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nZz-h0-fYj" customClass="ShimmerLabel" customModule="SBTest" customModuleProvider="target">
+                                    <rect key="frame" x="197" y="39" width="26.5" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                    <color key="textColor" red="0.0" green="0.36690649390000002" blue="0.87177920340000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01 January 2021" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zra-nr-ihP" userLabel="Date" customClass="ShimmerLabel" customModule="SBTest" customModuleProvider="target">
+                                    <rect key="frame" x="88" y="64.5" width="92.5" height="14.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="vs3-l9-k8w" firstAttribute="leading" secondItem="ZeF-Gg-J6Z" secondAttribute="leading" id="22Q-fm-xte"/>
+                                <constraint firstItem="zra-nr-ihP" firstAttribute="top" secondItem="nZz-h0-fYj" secondAttribute="bottom" constant="5" id="7CY-io-26f"/>
+                                <constraint firstItem="f2T-3h-WCJ" firstAttribute="leading" secondItem="P5l-Qi-mi3" secondAttribute="leading" id="E7s-dW-os6"/>
+                                <constraint firstAttribute="bottom" secondItem="f2T-3h-WCJ" secondAttribute="bottom" constant="8" id="NxG-9w-lND"/>
+                                <constraint firstAttribute="trailing" secondItem="f2T-3h-WCJ" secondAttribute="trailing" constant="16" id="WqV-fC-onI"/>
+                                <constraint firstItem="ZeF-Gg-J6Z" firstAttribute="top" secondItem="P5l-Qi-mi3" secondAttribute="top" id="YUf-b4-fhS"/>
+                                <constraint firstItem="nZz-h0-fYj" firstAttribute="centerY" secondItem="vs3-l9-k8w" secondAttribute="centerY" id="YZ9-fh-Hrz"/>
+                                <constraint firstItem="P5l-Qi-mi3" firstAttribute="leading" secondItem="8nf-u3-VMu" secondAttribute="leading" constant="16" id="bfm-S4-otW"/>
+                                <constraint firstItem="ZeF-Gg-J6Z" firstAttribute="leading" secondItem="P5l-Qi-mi3" secondAttribute="trailing" constant="8" id="bjz-11-1TV"/>
+                                <constraint firstAttribute="trailing" secondItem="ZeF-Gg-J6Z" secondAttribute="trailing" constant="16" id="f5t-EX-9vd"/>
+                                <constraint firstItem="zra-nr-ihP" firstAttribute="leading" secondItem="ZeF-Gg-J6Z" secondAttribute="leading" id="kku-kk-wuj"/>
+                                <constraint firstItem="f2T-3h-WCJ" firstAttribute="top" secondItem="P5l-Qi-mi3" secondAttribute="bottom" constant="5" id="lbi-CL-hwa"/>
+                                <constraint firstItem="P5l-Qi-mi3" firstAttribute="top" secondItem="8nf-u3-VMu" secondAttribute="top" constant="16" id="pas-OP-1aJ"/>
+                                <constraint firstItem="nZz-h0-fYj" firstAttribute="leading" secondItem="vs3-l9-k8w" secondAttribute="trailing" constant="5" id="rdn-eq-7tF"/>
+                                <constraint firstItem="vs3-l9-k8w" firstAttribute="top" secondItem="ZeF-Gg-J6Z" secondAttribute="bottom" constant="5" id="tHE-d8-kYJ"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="39M-97-sxc" firstAttribute="top" secondItem="frx-8K-Bv8" secondAttribute="bottom" id="1kU-C8-EfT"/>
+                        <constraint firstItem="V56-tH-vyI" firstAttribute="top" secondItem="39M-97-sxc" secondAttribute="bottom" id="65f-lx-2kB"/>
+                        <constraint firstItem="8nf-u3-VMu" firstAttribute="leading" secondItem="Ffr-k4-ddE" secondAttribute="leading" id="79k-d5-jkj"/>
+                        <constraint firstAttribute="trailing" secondItem="axw-Q2-3w6" secondAttribute="trailing" id="82O-VK-KaB"/>
+                        <constraint firstItem="axw-Q2-3w6" firstAttribute="leading" secondItem="Ffr-k4-ddE" secondAttribute="leading" id="B8D-ke-IXy"/>
+                        <constraint firstItem="frx-8K-Bv8" firstAttribute="leading" secondItem="Ffr-k4-ddE" secondAttribute="leading" id="EyV-Iz-PXf"/>
+                        <constraint firstItem="39M-97-sxc" firstAttribute="leading" secondItem="Ffr-k4-ddE" secondAttribute="leading" id="Mnv-fa-euX"/>
+                        <constraint firstItem="8nf-u3-VMu" firstAttribute="top" secondItem="pll-gf-8A2" secondAttribute="bottom" id="NcP-O4-YPW"/>
+                        <constraint firstAttribute="trailing" secondItem="V56-tH-vyI" secondAttribute="trailing" id="Ng6-KX-AM5"/>
+                        <constraint firstItem="pll-gf-8A2" firstAttribute="top" secondItem="V56-tH-vyI" secondAttribute="bottom" id="S7v-oe-D6f"/>
+                        <constraint firstAttribute="trailing" secondItem="pll-gf-8A2" secondAttribute="trailing" id="W36-i6-L3d"/>
+                        <constraint firstAttribute="trailing" secondItem="frx-8K-Bv8" secondAttribute="trailing" id="Xm5-cy-48O"/>
+                        <constraint firstAttribute="trailing" secondItem="8nf-u3-VMu" secondAttribute="trailing" id="f0J-bP-xXU"/>
+                        <constraint firstItem="axw-Q2-3w6" firstAttribute="top" secondItem="Ffr-k4-ddE" secondAttribute="top" id="fmx-rs-D6z"/>
+                        <constraint firstItem="frx-8K-Bv8" firstAttribute="top" secondItem="axw-Q2-3w6" secondAttribute="bottom" id="gAP-Tf-qfZ"/>
+                        <constraint firstItem="pll-gf-8A2" firstAttribute="leading" secondItem="Ffr-k4-ddE" secondAttribute="leading" id="p0L-Yl-mM2"/>
+                        <constraint firstAttribute="trailing" secondItem="39M-97-sxc" secondAttribute="trailing" id="vGX-96-Tim"/>
+                        <constraint firstItem="V56-tH-vyI" firstAttribute="leading" secondItem="Ffr-k4-ddE" secondAttribute="leading" id="vrr-xo-hgR"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="suN-tA-SCl">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                </tableView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="Ffr-k4-ddE" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="1gj-zw-93F"/>
+                <constraint firstAttribute="bottom" secondItem="Ffr-k4-ddE" secondAttribute="bottom" id="Ln6-aW-4R6"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="suN-tA-SCl" secondAttribute="trailing" id="Sf5-fK-cf7"/>
+                <constraint firstItem="Ffr-k4-ddE" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="V4z-EV-u5h"/>
+                <constraint firstItem="suN-tA-SCl" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="XYl-l7-jgR"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="suN-tA-SCl" secondAttribute="bottom" id="YaA-85-CQL"/>
+                <constraint firstItem="Ffr-k4-ddE" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="ghE-g2-KE9"/>
+                <constraint firstItem="suN-tA-SCl" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="sp3-jo-gW8"/>
+            </constraints>
+            <point key="canvasLocation" x="121.73913043478262" y="71.651785714285708"/>
+        </view>
+    </objects>
+    <designables>
+        <designable name="0hO-HU-ari">
+            <size key="intrinsicContentSize" width="92.5" height="14.5"/>
+        </designable>
+        <designable name="1Yp-8F-Jbn">
+            <size key="intrinsicContentSize" width="11" height="10"/>
+        </designable>
+        <designable name="2Qm-z3-sIf">
+            <size key="intrinsicContentSize" width="26.5" height="20.5"/>
+        </designable>
+        <designable name="37Y-hG-3b7">
+            <size key="intrinsicContentSize" width="11" height="10"/>
+        </designable>
+        <designable name="8cl-hs-Zrc">
+            <size key="intrinsicContentSize" width="11" height="10"/>
+        </designable>
+        <designable name="8li-rc-nh5">
+            <size key="intrinsicContentSize" width="11" height="10"/>
+        </designable>
+        <designable name="9HD-Dt-zvL">
+            <size key="intrinsicContentSize" width="11" height="10"/>
+        </designable>
+        <designable name="B8T-5y-AGf">
+            <size key="intrinsicContentSize" width="11" height="10"/>
+        </designable>
+        <designable name="DA5-kN-ERd">
+            <size key="intrinsicContentSize" width="11" height="10"/>
+        </designable>
+        <designable name="Dag-ht-3XF">
+            <size key="intrinsicContentSize" width="26.5" height="20.5"/>
+        </designable>
+        <designable name="FHv-Hv-c7I">
+            <size key="intrinsicContentSize" width="167" height="18"/>
+        </designable>
+        <designable name="FxC-G3-0Sl">
+            <size key="intrinsicContentSize" width="11" height="10"/>
+        </designable>
+        <designable name="H7z-MS-WRA">
+            <size key="intrinsicContentSize" width="11" height="10"/>
+        </designable>
+        <designable name="ISg-cH-zxJ">
+            <size key="intrinsicContentSize" width="167" height="18"/>
+        </designable>
+        <designable name="LDp-mb-KEB">
+            <size key="intrinsicContentSize" width="11" height="10"/>
+        </designable>
+        <designable name="N6x-au-5Ac">
+            <size key="intrinsicContentSize" width="11" height="10"/>
+        </designable>
+        <designable name="NH1-Xm-0D1">
+            <size key="intrinsicContentSize" width="11" height="10"/>
+        </designable>
+        <designable name="P1N-Ix-oQ7">
+            <size key="intrinsicContentSize" width="11" height="10"/>
+        </designable>
+        <designable name="SMf-J2-9u6">
+            <size key="intrinsicContentSize" width="11" height="10"/>
+        </designable>
+        <designable name="Sgf-aM-F9J">
+            <size key="intrinsicContentSize" width="11" height="10"/>
+        </designable>
+        <designable name="UvL-Yf-DUN">
+            <size key="intrinsicContentSize" width="776.5" height="17"/>
+        </designable>
+        <designable name="WHL-iS-bdF">
+            <size key="intrinsicContentSize" width="92.5" height="14.5"/>
+        </designable>
+        <designable name="WMW-3B-rhv">
+            <size key="intrinsicContentSize" width="11" height="10"/>
+        </designable>
+        <designable name="XQn-dk-Vbl">
+            <size key="intrinsicContentSize" width="92.5" height="14.5"/>
+        </designable>
+        <designable name="ZES-Te-R5z">
+            <size key="intrinsicContentSize" width="776.5" height="17"/>
+        </designable>
+        <designable name="ZeF-Gg-J6Z">
+            <size key="intrinsicContentSize" width="167" height="18"/>
+        </designable>
+        <designable name="a40-0e-zWY">
+            <size key="intrinsicContentSize" width="11" height="10"/>
+        </designable>
+        <designable name="a5s-UO-Rb9">
+            <size key="intrinsicContentSize" width="167" height="18"/>
+        </designable>
+        <designable name="f2T-3h-WCJ">
+            <size key="intrinsicContentSize" width="776.5" height="17"/>
+        </designable>
+        <designable name="fXq-11-xQh">
+            <size key="intrinsicContentSize" width="11" height="10"/>
+        </designable>
+        <designable name="fpB-TU-KET">
+            <size key="intrinsicContentSize" width="11" height="10"/>
+        </designable>
+        <designable name="hLP-an-OFl">
+            <size key="intrinsicContentSize" width="776.5" height="17"/>
+        </designable>
+        <designable name="iA4-xx-fRP">
+            <size key="intrinsicContentSize" width="26.5" height="20.5"/>
+        </designable>
+        <designable name="ixN-6h-Llp">
+            <size key="intrinsicContentSize" width="11" height="10"/>
+        </designable>
+        <designable name="lgS-n7-Rkh">
+            <size key="intrinsicContentSize" width="11" height="10"/>
+        </designable>
+        <designable name="nMf-4b-fNg">
+            <size key="intrinsicContentSize" width="11" height="10"/>
+        </designable>
+        <designable name="nZz-h0-fYj">
+            <size key="intrinsicContentSize" width="26.5" height="20.5"/>
+        </designable>
+        <designable name="opR-El-60f">
+            <size key="intrinsicContentSize" width="167" height="18"/>
+        </designable>
+        <designable name="qKL-La-Tzo">
+            <size key="intrinsicContentSize" width="92.5" height="14.5"/>
+        </designable>
+        <designable name="shm-rW-Pgh">
+            <size key="intrinsicContentSize" width="11" height="10"/>
+        </designable>
+        <designable name="szp-Hw-98H">
+            <size key="intrinsicContentSize" width="26.5" height="20.5"/>
+        </designable>
+        <designable name="uHO-ki-Mbv">
+            <size key="intrinsicContentSize" width="776.5" height="17"/>
+        </designable>
+        <designable name="wra-sB-DqN">
+            <size key="intrinsicContentSize" width="11" height="10"/>
+        </designable>
+        <designable name="xQe-gE-Edz">
+            <size key="intrinsicContentSize" width="11" height="10"/>
+        </designable>
+        <designable name="zra-nr-ihP">
+            <size key="intrinsicContentSize" width="92.5" height="14.5"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="Star Empty" width="11" height="10"/>
+        <image name="Star Fill" width="11" height="10"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
