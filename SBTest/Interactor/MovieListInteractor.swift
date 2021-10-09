@@ -67,14 +67,13 @@ class MovieListInteractor: IMovieListInteractor {
     
     func getMoviesViewModel() -> [MovieListModel.ViewModel.MovieItem] {
         
-        var list: [MovieListModel.ViewModel.MovieItem] = []
-        
-        for item in self.getMoviesEntity() {
+        let listViewModel: [MovieListModel.ViewModel.MovieItem] = self.getMoviesEntity().map { item in
             let viewModelMovie = MovieListModel.ViewModel(movie: item)
-            list.append(viewModelMovie.movieItem)
+            let movieItem = viewModelMovie.movieItem
+            return movieItem
         }
         
-        return list
+        return listViewModel
     }
 
     func getMovie(on index: Int) -> Movie? {
