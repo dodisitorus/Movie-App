@@ -1,2 +1,2 @@
-# Stockbit iOS Technical test
+# Movie App
 
